@@ -1,0 +1,29 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Always ignore (repo metadata)
+# ─────────────────────────────────────────────────────────────────────────────
+README.md
+LICENSE
+.gitignore
+package.json
+pnpm-lock.yaml
+vite.config.ts
+.secretlintrc.json
+.vite-hooks
+node_modules
+**/DS_Store
+docs
+
+{{- if ne .osid "darwin" }}
+# ─────────────────────────────────────────────────────────────────────────────
+# Ignore only on Mac Pi OS
+# ─────────────────────────────────────────────────────────────────────────────
+.chezmoiscripts/darwin/**
+Library/**
+{{- end }}
+
+{{- if ne .osid "linux-raspberrypi" }}
+# ─────────────────────────────────────────────────────────────────────────────
+# Ignore only on Raspberry Pi OS
+# ─────────────────────────────────────────────────────────────────────────────
+.chezmoiscripts/linux-raspberrypi/**
+{{ end }}

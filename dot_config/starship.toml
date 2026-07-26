@@ -1,0 +1,57 @@
+add_newline = true
+format = """
+$cmd_duration\
+($fill$line_break)\
+(${custom.git}$git_branch$git_status)\
+($python$directory$line_break)\
+$character
+"""
+
+[fill]
+symbol = "─"
+
+[directory]
+truncation_length = 3
+
+[git_branch]
+symbol = ''
+format = '\([$symbol$branch(:$remote_branch)]($style)\)'
+
+[git_status]
+format = "([$all_status$ahead_behind]($style) )\n"
+conflicted = ''
+ahead = ''
+behind = ''
+diverged = ''
+up_to_date = '✓'
+untracked = ''
+stashed = ''
+modified = '🔥'
+staged = ''
+renamed = ''
+deleted = ''
+
+[custom.git]
+when = true
+require_repo = true
+format = "[$output]($style)"
+command = '''
+if git remote get-url origin &>/dev/null; then
+  repo=$(git remote get-url origin | sed -E -e 's,^(https://github.com/|git@github.com:),,' -e 's,\.git$,,')
+else
+  repo=$(git rev-parse --show-toplevel | sed -E "s,$(ghq root)/(github\.com/)?,,g" | sed -E 's,/\.worktrees/.*,,')
+fi
+echo "$repo"
+'''
+style = 'bold blue'
+
+
+[python]
+# Display virtual environment name if inside it
+format = '[(\($virtualenv\) )]($style)'
+style = 'bold yellow'
+
+[cmd_duration]
+format = "took [$duration]($style)\n\n"
+style = "bold yellow"
+min_time = 30000

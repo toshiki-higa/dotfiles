@@ -1,0 +1,45 @@
+[alias]
+  graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+  delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+[user]
+  name = {{ .name }}
+  email = {{ .email }}
+[ghq]
+  root=~/ghq
+[init]
+  defaultBranch = main
+[column]
+  ui = auto
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+  ff = only
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[pull]
+  rebase = true
+[rerere]
+  enabled = true
+  autoupdate = true
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+[merge]
+  conflictstyle = zdiff3
+[help]
+  autocorrect = prompt
+[core]
+  filemode = false

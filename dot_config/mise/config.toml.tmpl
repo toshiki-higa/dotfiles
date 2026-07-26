@@ -1,0 +1,32 @@
+# SETTING ------------------------------------------
+[settings]
+npm.package_manager = "pnpm"
+pipx   = { uvx = true }
+python = { compile = false }
+experimental = true
+
+# TOOL ---------------------------------------------
+[tools]
+# LANGUAGE AND PACKAGE MANGER ----------------------
+node   = "latest"
+pnpm   = "latest"
+python = "latest"
+uv     = "latest" # or `pixi`; https://prefix.dev/
+
+# DEVELOPER TOOLS ----------------------------------
+# AI CODING
+"npm:@steipete/oracle" = "latest"
+"npm:@waishnav/devspace" = { version = "latest", allow_builds = ["better-sqlite3"] }
+"pipx:twitter-cli" = "latest"
+
+# Shell
+"github:ushironoko/abbrs" = "latest"
+
+# Security
+# "npm:@aikidosec/safe-chain" = "latest"
+
+# Other
+"pinact" = "latest"
+"github:mizchi/actrun" = "latest"
+# "github:mizchi/similarity" = "latest"
+# "gcloud" = "latest"

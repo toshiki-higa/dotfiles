@@ -1,0 +1,41 @@
+{{- /* UTILITY --------------------------------------------------------- */ -}}
+{{- /* OS */ -}}
+{{- /* Reference: https://forums.raspberrypi.com/viewtopic.php?t=336300 */ -}}
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   if and (eq .chezmoi.osRelease.id "debian") (stat "/etc/rpi-issue") -}}
+{{-     $osid = printf "%s-%s" .chezmoi.os "raspberrypi" -}}
+{{-   else -}}
+{{-     $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{-   end -}}
+{{- end -}}
+
+{{- /* COMFIRM --------------------------------------------------------- */ -}}
+{{- $mode := "" -}}
+{{- if eq $osid "linux-raspberrypi" -}}
+  {{- $choices := list "desktop" "runner" "server" -}}
+  {{- $mode = promptChoiceOnce . "desktop" "What is purpose" $choices -}}
+{{- end -}}
+
+{{- /* SETTINGS -------------------------------------------------------- */ -}}
+[git]
+  autoAdd = true
+  # autoCommit = true # add + commit
+  # autoPush = true
+
+[gitHub]
+  refreshPeriod = "300m"
+
+[add]
+  secrets = "error"
+
+[edit]
+  apply = true
+  command = "zed"
+  args = ["--wait"]
+
+[data]
+  osid  = {{ $osid | quote }}
+  name  = "toshiki-higa"
+  email = "127714325+toshiki-higa@users.noreply.github.com" # set for privacy: https://docs.github.com/ja/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address
+  mode  = {{ $mode | quote }}

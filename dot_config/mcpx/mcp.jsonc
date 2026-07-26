@@ -1,0 +1,94 @@
+{
+  "$schema": "https://raw.githubusercontent.com/yata-one/mcpx/main/schema.json",
+  "mcpServers": {
+    "context7": {
+      "transport": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "description": "Use to search libraries info"
+    },
+    "deepwiki": {
+      "transport": "http",
+      "url": "https://mcp.deepwiki.com/mcp",
+      "description": "Use to explore public repositories"
+    },
+    "exa": {
+      "transport": "http",
+      "url": "https://mcp.exa.ai/mcp",
+      "description": "Use to search in web, fetch context from url"
+    },
+    "grep_app": {
+      "transport": "http",
+      "url": "https://mcp.grep.app",
+      "description": "Use this for example-based code search."
+    },
+    "alphaxiv": {
+      "transport": "http",
+      "url": "https://api.alphaxiv.org/mcp/v1",
+      "description": "Use to search and explore academic research papers",
+      "auth": {
+        "type": "oauth"
+      }
+    },
+    "apple-mail": {
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["apple-mail-fast-mcp"],
+      "description": "Use this to execute email task via apple mail",
+      "lifecycle": {
+        "mode": "keep-alive",
+        "idleTimeoutMs": 300000
+      }
+    },
+    "s2t-xai-v1": {
+      "transport": "http",
+      "url": "https://kamui-code.ai/a2t/fal/xai/speech-to-text/v1",
+      "description": "xAI Speech-to-Text v1",
+      "headers": {
+        "KAMUI-CODE-PASS": "${KAMUI_CODE_PASS_KEY}"
+      }
+    },
+    "webmcp-relay": {
+      "transport": "stdio",
+      "command": "pnx",
+      "args": ["@mcp-b/webmcp-local-relay@latest"],
+      "description": "Use WebMCP tools from browser tabs via local relay server",
+      "lifecycle": {
+        "mode": "keep-alive",
+        "idleTimeoutMs": 300000
+      }
+    },
+    "freee": {
+      "transport": "stdio",
+      "command": "pnx",
+      "args": ["freee-mcp"],
+      "description": "Use this for freee accounting",
+      "auth": {
+        "type": "oauth"
+      },
+      "lifecycle": {
+        "mode": "keep-alive",
+        "idleTimeoutMs": 300000
+      }
+    },
+    "tax-law": {
+      "transport": "stdio",
+      "command": "pnx",
+      "args": ["tax-law-mcp"],
+      "description": "Use this to reference Japanese tax law",
+      "lifecycle": {
+        "mode": "keep-alive",
+        "idleTimeoutMs": 300000
+      }
+    },
+    "labor-law": {
+      "transport": "stdio",
+      "command": "pnx",
+      "args": ["labor-law-mcp"],
+      "description": "Use this to reference Japanese labor law",
+      "lifecycle": {
+        "mode": "keep-alive",
+        "idleTimeoutMs": 300000
+      }
+    },
+  }
+}

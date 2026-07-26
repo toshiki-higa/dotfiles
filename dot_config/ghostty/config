@@ -1,0 +1,24 @@
+# Theme Settings
+theme = nord
+
+# Font Settings
+font-family = JetBrains Mono
+font-feature = "-dlig"
+
+# Window Settings
+window-width = 9999
+window-height = 9999
+window-padding-x = 20
+window-padding-y = 5
+window-padding-balance = true
+background-opacity = 0.80
+background-blur-radius = 20
+
+# MacOS Settings
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+macos-window-shadow = false
+macos-non-native-fullscreen = "true"
+
+# TERM
+term = "xterm-256color"

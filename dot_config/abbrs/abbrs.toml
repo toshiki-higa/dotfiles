@@ -1,0 +1,8 @@
+[[abbr]]
+keyword = "ch"
+expansion = "chezmoi"
+
+[[abbr]]
+keyword = "chcd"
+expansion = "printf 'cd %q' \"$(chezmoi source-path)\""
+evaluate = true

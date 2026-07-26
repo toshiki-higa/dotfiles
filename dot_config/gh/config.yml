@@ -1,0 +1,10 @@
+version: "1"
+git_protocol: https
+prompt: enabled
+# Multiple GitHub profiles configuration
+# Reference: https://moderniser.repo.cont-aid.com/How-to-switch-accounts-for-GitHub-CLI-commands-using-commands.html
+aliases:
+  create-profile: '![ -z "$1" ] && echo "[ERROR] Please specify the profile name." && exit 1; gh auth status && read -p "Do you create this profile? (y/N): " yn; case "$yn" in [yY]*) cp ~/.config/gh/hosts.yml ~/.config/gh/hosts.yml.$1 && echo "New hosts file created: ~/.config/gh/hosts.yml.$1";; esac'
+  switch-profile: '![ -z "$1" ] && echo "[ERROR] Please specify the profile name." && exit 1; if [ -e ~/.config/gh/hosts.yml.$1 ]; then cp ~/.config/gh/hosts.yml.$1 ~/.config/gh/hosts.yml && gh auth status && echo "[INFO] Hosts file switched"; else echo "[ERROR] Hosts file not found: ~/.config/gh/hosts.yml.$1"; fi'
+  delete-profile: '![ -z "$1" ] && echo "[ERROR] Please specify the profile name." && exit 1; read -p "Do you delete this profile? (y/N): " yn; case "$yn" in [yY]*) rm -f ~/.config/gh/hosts.yml.$1 && echo "Hosts file deleted: ~/.config/gh/hosts.yml.$1";; esac'
+  list-profiles: '!ls ~/.config/gh/hosts.yml.* | sed -e "s|^.*hosts.yml.||" | sed -e "s|^|  - |"'

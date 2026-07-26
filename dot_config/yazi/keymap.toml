@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on = ["<Space>", "g"]
+run = "shell --block -- if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then exec lazygit; fi"
+desc = "Open LazyGit"
