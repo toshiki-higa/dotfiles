@@ -2,8 +2,7 @@
 
 set -euo pipefail
 
-# Force Home Manager's newly generated session variables to be loaded.
-unset __HM_SESS_VARS_SOURCED
+# Load Home Manager's newly generated shell environment.
 source "$HOME/.zshrc" &>/dev/null || true
 
 print '\n--- Activate mise changes --'
