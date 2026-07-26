@@ -74,6 +74,7 @@
 
   programs.direnv = {
     enable = true;
+    silent = true;
     nix-direnv.enable = true;
     enableZshIntegration = false; # managed ~/.zshrc by chezmoi
   };
