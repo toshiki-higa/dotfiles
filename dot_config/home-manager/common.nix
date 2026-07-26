@@ -3,6 +3,11 @@
 {
   # Do not change this value casually. It controls Home Manager compatibility.
   home.stateVersion = "24.11";
+
+  home.sessionVariables = {
+    EDITOR = "hx";
+    HOMEBREW_FORBIDDEN_FORMULAE = "node python python3 pip npm pnpm yarn";
+  };
   home.sessionPath = [
     "/run/current-system/sw/bin"
     "/etc/profiles/per-user/${config.home.username}/bin"
@@ -14,10 +19,10 @@
     "$HOME/.cargo/bin"
     "$HOME/.moon/bin"
   ];
+
   programs.home-manager.enable = true;
 
-  # Start with package management only. Shell and application configuration
-  # remains owned by chezmoi to avoid managing the same file from two places.
+  # Use Home Manager for packages only (configuration by chezmoi)
   home.packages = with pkgs; [
     # Bootstrap
     chezmoi
