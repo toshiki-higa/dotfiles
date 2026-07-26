@@ -5,6 +5,8 @@ if [[ -r "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh" ]]; the
 elif [[ -r "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]]; then
   source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 fi
+# Deduplicate paths
+typeset -U path PATH
 
 export EDITOR="hx"
 export HOMEBREW_FORBIDDEN_FORMULAE="node python python3 pip npm pnpm yarn"

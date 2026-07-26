@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-# .zshrc expects an interactive shell where unset parameters are allowed.
+# Force Home Manager's newly generated session variables to be loaded.
+unset __HM_SESS_VARS_SOURCED
 source "$HOME/.zshrc" &>/dev/null || true
 
 pi_packages=(
