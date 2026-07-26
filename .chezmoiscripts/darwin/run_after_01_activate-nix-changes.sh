@@ -3,7 +3,8 @@
 set -euo pipefail
 
 marker="${TMPDIR:-/tmp}/chezmoi-home-manager-activation-${UID}"
-flake="$HOME/.config/home-manager#macos"
+flake="$HOME/.config/home-manager"
+configuration="macos"
 
 print '\n--- Activate Nix changes ---'
 if [[ ! -f "$marker" ]]; then
@@ -26,12 +27,19 @@ fi
 
 case "$action" in
   initial)
+    print '[RUN] Initial Home Manager activation'
+    "$(command -v nix)" run home-manager -- \
+      switch --flake "$flake#$configuration"
+    print '[DONE] Initial Home Manager activation'
+
     print '[RUN] Initial nix-darwin activation'
-    sudo "$(command -v nix)" run nix-darwin -- switch --flake "$flake"
+    sudo "$(command -v nix)" run nix-darwin -- \
+      switch --flake "$flake#$configuration"
     ;;
   update-darwin)
     print '[RUN] Apply nix-darwin configuration'
-    sudo "$(command -v darwin-rebuild)" switch --flake "$flake"
+    sudo "$(command -v darwin-rebuild)" switch \
+      --flake "$flake#$configuration"
     ;;
   update-home-manager)
     if ! command -v home-manager >/dev/null 2>&1; then
@@ -39,7 +47,7 @@ case "$action" in
       exit 1
     fi
     print '[RUN] Apply Home Manager configuration'
-    home-manager switch --flake "$flake"
+    home-manager switch --flake "$flake#$configuration"
     ;;
   *)
     print -u2 "Unknown action: $action"
