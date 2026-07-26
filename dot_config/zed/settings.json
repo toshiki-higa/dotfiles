@@ -1,0 +1,55 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // 1. Appearance
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+  },
+
+  // 2. Editor
+  "diff_view_style": "unified",
+  "cli_default_open_behavior": "existing_window",
+  "languages": {
+    "Markdown": {
+      "soft_wrap": "editor_width",
+    },
+  },
+
+  // 3. Extensions
+  "auto_install_extensions": {
+    "git-firefly": false,
+    "docker-compose": false,
+    "mermaid": true,
+    "moonbit": true,
+    "rainbow-csv": true,
+  },
+
+  // 4. Agent
+  "agent": {
+    "notify_when_agent_waiting": "primary_screen",
+    "favorite_models": [],
+    "single_file_review": false,
+    "model_parameters": [],
+  },
+
+  // 5. Privacy
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+}
