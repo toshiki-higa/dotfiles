@@ -4,6 +4,7 @@
   # Do not change this value casually. It controls Home Manager compatibility.
   home.stateVersion = "24.11";
   home.sessionPath = [
+    "/run/current-system/sw/bin"
     "/etc/profiles/per-user/${config.home.username}/bin"
     "$HOME/.nix-profile/bin"
     "$HOME/.local/bin"
