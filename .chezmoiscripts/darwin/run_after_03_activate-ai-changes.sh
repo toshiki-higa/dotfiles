@@ -39,7 +39,7 @@ else
   print '[SKIP] Moshi hooks for Pi are current'
 fi
 
-if herdr status server >/dev/null 2>&1; then
+if herdr status server --json | jq -e '.running == true' >/dev/null; then
   print '[RUN] Reload Herdr configuration'
   herdr server reload-config >/dev/null
   print '[DONE] Reload Herdr configuration'
