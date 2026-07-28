@@ -17,21 +17,14 @@ fi
 
 if ! command -v darwin-rebuild >/dev/null 2>&1; then
   print '  nix-darwin: not installed'
-  action="initial"
+  action="init"
 else
-  for source_file in "$source_dir"/*.nix(N); do
+  for source_file in "$source_dir"/*.nix(N) "$source_dir"/flake.lock(N); do
     filename="${source_file:t}"
     cmp -s "$source_file" "$HOME/.config/home-manager/$filename" && continue
 
     print -r -- "  changed: $filename"
-    if [[ "$filename" == "common.nix" ]]; then
-      if [[ -z "$action" ]]; then
-        action="update-home-manager"
-      fi
-    else
-      action="update-darwin"
-      break
-    fi
+    action="update"
   done
 fi
 

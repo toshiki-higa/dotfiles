@@ -26,28 +26,15 @@ if ! command -v nix >/dev/null 2>&1; then
 fi
 
 case "$action" in
-  initial)
-    print '[RUN] Initial Home Manager activation'
-    "$(command -v nix)" run home-manager -- \
-      switch --flake "$flake#$configuration"
-    print '[DONE] Initial Home Manager activation'
-
+  init)
     print '[RUN] Initial nix-darwin activation'
     sudo "$(command -v nix)" run nix-darwin -- \
       switch --flake "$flake#$configuration"
     ;;
-  update-darwin)
+  update)
     print '[RUN] Apply nix-darwin configuration'
     sudo "$(command -v darwin-rebuild)" switch \
       --flake "$flake#$configuration"
-    ;;
-  update-home-manager)
-    if ! command -v home-manager >/dev/null 2>&1; then
-      print -u2 "home-manager command not found. Run the initial nix-darwin activation first."
-      exit 1
-    fi
-    print '[RUN] Apply Home Manager configuration'
-    home-manager switch --flake "$flake#$configuration"
     ;;
   *)
     print -u2 "Unknown action: $action"

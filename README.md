@@ -21,9 +21,6 @@ nix run nixpkgs#chezmoi -- init --apply toshiki-higa
 ### Update
 
 ```sh
-# Apply Changes　in dotfiles
-just dotfiles-apply # chezmoi apply
-
-# Explicitly update all tools to the latest version
-just dotfiles-upgrade
+just switch # Apply Changes　via `chezmoi apply`
+just update # Explicitly update dependencies
 ```

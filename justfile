@@ -1,13 +1,13 @@
 set shell := ["zsh", "-cu"]
 
 # [dotfiles] apply changes
-dotfiles-apply:
+switch:
     #!/bin/zsh
     set -euo pipefail
     chezmoi apply
 
 # [dotfiles] Explicitly upgrade Homebrew and Nix
-dotfiles-upgrade:
+update:
     #!/bin/zsh
     set -euo pipefail
 
