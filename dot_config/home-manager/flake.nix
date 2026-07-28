@@ -28,9 +28,13 @@
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     llm-agents.url = "github:numtide/llm-agents.nix";
     mcpx.url = "github:yata-one/mcpx";
+    shikher-yazi-plugins = {
+      url = "github:ShikherVerma/yazi-plugins";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, nix-darwin, home-manager, nix-homebrew, llm-agents, mcpx, ... }:
+  outputs = { nixpkgs, nix-darwin, home-manager, nix-homebrew, llm-agents, mcpx, shikher-yazi-plugins, ... }:
     let
       system = "aarch64-darwin";
       username = "toshiki-higa";
@@ -51,6 +55,7 @@
           herdr = llm-agents.packages.${system}.herdr;
           hunk = llm-agents.packages.${system}.hunk;
           mcpx = mcpx.packages.${system}.default;
+          vscodeGitGutter = "${shikher-yazi-plugins}/vscode-git-gutter.yazi";
         };
         home = {
           inherit username;

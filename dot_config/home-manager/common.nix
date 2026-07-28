@@ -1,4 +1,4 @@
-{ config, pkgs, apm, pi, opencode, agent-browser, herdr, hunk, mcpx, ... }:
+{ config, pkgs, apm, pi, opencode, agent-browser, herdr, hunk, mcpx, vscodeGitGutter, ... }:
 
 {
   # Do not change this value casually. It controls Home Manager compatibility.
@@ -47,15 +47,19 @@
     fd
     xh
     fzf
+
+    # File Viewer / Editor
+    helix
     jq
-    glow
-    delta
+    imagemagick
+    resvg
+    ffmpeg
+    poppler
+    p7zip
 
     # Development
     mise
     just
-    helix
-    yazi
     cloudflared
     mosh
     turso-cli
@@ -75,8 +79,19 @@
 
     # Other utilities
     rclone
-    ffmpeg
   ];
+
+  programs.yazi = {
+    enable = true;
+    plugins = with pkgs.yaziPlugins; {
+      vscode-git-gutter = vscodeGitGutter;
+      git = {
+        package = git;
+        setup = true;
+        settings.order = 1500;
+      };
+    };
+  };
 
   programs.direnv = {
     enable = true;
