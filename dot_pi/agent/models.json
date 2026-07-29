@@ -1,0 +1,44 @@
+{
+  "providers": {
+    "openai-codex": {
+      "modelOverrides": {
+        "gpt-5.6-sol": {
+          "contextWindow": 272000
+        }
+      }
+    },
+    "kimi-coding": {
+      "modelOverrides": {
+        "k3-256k": {
+          "cost": {
+            "input": 3.0,
+            "output": 15.0,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.0
+          }
+        }
+      }
+    },
+    "zai": {
+      "modelOverrides": {
+        "glm-5.2": {
+          "cost": {
+            "input": 1.4,
+            "output": 4.4,
+            "cacheRead": 0.26,
+            "cacheWrite": 0
+          },
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": null,
+            "medium": null,
+            "high": "high",
+            "xhigh": null,
+            "max": "max"
+          }
+        }
+      }
+    }
+  }
+}
