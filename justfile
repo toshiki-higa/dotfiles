@@ -35,3 +35,7 @@ update:
     print '[RUN] Save flake.lock to dotfiles'
     chezmoi re-add "$lock"
     print '[DONE] Save flake.lock to dotfiles'
+
+    print '[RUN] Update tools by mise'
+    mise up
+    print '[DONE] Update tools by mise'
