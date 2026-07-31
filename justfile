@@ -32,10 +32,26 @@ update:
     sudo darwin-rebuild switch --flake "$flake#macos"
     print '[DONE] Activate Nix and Homebrew upgrades'
 
-    print '[RUN] Save flake.lock to dotfiles'
-    chezmoi re-add "$lock"
-    print '[DONE] Save flake.lock to dotfiles'
-
     print '[RUN] Update tools by mise'
     mise up
     print '[DONE] Update tools by mise'
+
+    print '\n--- Clean up storage --------'
+
+    print '[RUN] Clean up old nix-darwin generations'
+    sudo "$(command -v nh)" clean profile \
+      /nix/var/nix/profiles/system \
+      --keep 2 \
+      --no-gcroots \
+      --no-direnv
+    print '[DONE] Clean up old nix-darwin generations'
+
+    print '[RUN] Clean up Homebrew cache'
+    brew cleanup --prune=all
+    print '[DONE] Clean up Homebrew cache'
+
+    print '\n--- Sync dotfiles -----------'
+
+    print '[RUN] Save flake.lock to dotfiles'
+    chezmoi re-add "$lock"
+    print '[DONE] Save flake.lock to dotfiles'
