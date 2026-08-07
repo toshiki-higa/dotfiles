@@ -6,8 +6,6 @@ font-family = JetBrains Mono
 font-feature = "-dlig"
 
 # Window Settings
-window-width = 9999
-window-height = 9999
 window-padding-x = 20
 window-padding-y = 5
 window-padding-balance = true
