@@ -48,6 +48,7 @@
         autohide = true;
         show-recents = false;
         mru-spaces = false;
+        tilesize = 48;
       };
 
       trackpad.Clicking = true;
