@@ -66,6 +66,14 @@
     };
   };
 
+  # Disable CursorUIViewService to prevent memory growth
+  system.activationScripts.postActivation.text = ''
+    /bin/mkdir -p /Library/Preferences/FeatureFlags/Domain
+    /usr/bin/defaults write \
+      /Library/Preferences/FeatureFlags/Domain/UIKit.plist \
+      redesigned_text_cursor -dict-add Enabled -bool NO
+  '';
+
   # Clean old profiles and unreachable store paths every Sunday at 03:15.
   # Run as a root daemon so nix-darwin system generations are included.
   launchd.daemons.nh-clean.serviceConfig = {
