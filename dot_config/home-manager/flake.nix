@@ -4,7 +4,7 @@
   nixConfig = {
     extra-substituters = [
       "https://cache.numtide.com"
-      "https://yata-one.github.io/mcpx"
+      "https://yatainc.github.io/mcpx"
     ];
     extra-trusted-public-keys = [
       "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
