@@ -149,6 +149,7 @@
       # Tools
       "chatgpt"
       "openusage"
+      "vibeproxy"
       "raspberry-pi-imager"
     ];
 
