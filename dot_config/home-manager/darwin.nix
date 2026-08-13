@@ -53,9 +53,15 @@
 
       trackpad.Clicking = true;
 
-      CustomUserPreferences."com.apple.desktopservices" = {
-        DSDontWriteNetworkStores = true;
-        DSDontWriteUSBStores = true;
+      CustomUserPreferences = {
+        "com.apple.desktopservices" = {
+          DSDontWriteNetworkStores = true;
+          DSDontWriteUSBStores = true;
+        };
+
+        "com.apple.symbolichotkeys".AppleSymbolicHotKeys = {
+          "65".enabled = false; # Disable Option-Command-Space (Finder search window)
+        };
       };
     };
   };
