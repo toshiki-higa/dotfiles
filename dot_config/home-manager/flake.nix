@@ -8,7 +8,7 @@
     ];
     extra-trusted-public-keys = [
       "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
-      "yata-one-mcpx-1:0GPBIC52/PszrTcDzKJIZ7qMmcRvKAWK2WzZYKskgCs="
+      "yatainc-mcpx-1:vr17tU1/jIMhXnWkl1kAyc1rBFMlo6T9IPDKHhvwbC0="
     ];
   };
 
