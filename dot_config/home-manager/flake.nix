@@ -32,6 +32,12 @@
       url = "github:ShikherVerma/yazi-plugins";
       flake = false;
     };
+    agent-skills-nix = {
+      url = "github:Kyure-A/agent-skills-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+    skills.url = "github:toshiki-higa/skills";
   };
 
   outputs = inputs@{ nixpkgs, nix-darwin, home-manager, nix-homebrew, ... }:
@@ -46,7 +52,10 @@
       # Home Manager is the primary user configuration. Reuse the exact same
       # module from both the standalone and nix-darwin evaluation paths.
       homeUser = {
-        imports = [ ./common.nix ];
+        imports = [
+          ./common.nix
+          inputs.agent-skills-nix.homeManagerModules.default
+        ];
         _module.args = { inherit inputs; };
         home = {
           inherit username;

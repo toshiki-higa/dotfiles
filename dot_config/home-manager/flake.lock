@@ -1,5 +1,113 @@
 {
   "nodes": {
+    "agent-browser": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786403026,
+        "narHash": "sha256-UdCBSe7w0ZgJimB7ixGcaabJjH3m6O0vB1SV9n9apfE=",
+        "owner": "vercel-labs",
+        "repo": "agent-browser",
+        "rev": "548b159b30eef119ccf6846c8bc807d0eaa3f6f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vercel-labs",
+        "repo": "agent-browser",
+        "type": "github"
+      }
+    },
+    "agent-skills-nix": {
+      "inputs": {
+        "blueprint": "blueprint",
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786379373,
+        "narHash": "sha256-zrvcpGFA8zG6yRLBqQH9bNkJap8xMvLNvkuT4+7w6X8=",
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "rev": "1594ba479be81a7cb6dd19faabefcb1ed5b3f964",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "type": "github"
+      }
+    },
+    "agent-skills-nix_2": {
+      "inputs": {
+        "blueprint": "blueprint_2",
+        "home-manager": "home-manager_2",
+        "nixpkgs": [
+          "skills",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786379373,
+        "narHash": "sha256-zrvcpGFA8zG6yRLBqQH9bNkJap8xMvLNvkuT4+7w6X8=",
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "rev": "1594ba479be81a7cb6dd19faabefcb1ed5b3f964",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "type": "github"
+      }
+    },
+    "blueprint": {
+      "inputs": {
+        "nixpkgs": [
+          "agent-skills-nix",
+          "nixpkgs"
+        ],
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1776249299,
+        "narHash": "sha256-Dt9t1TGRmJFc0xVYhttNBD6QsAgHOHCArqGa0AyjrJY=",
+        "owner": "numtide",
+        "repo": "blueprint",
+        "rev": "56131e8628f173d24a27f6d27c0215eff57e40dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "blueprint",
+        "type": "github"
+      }
+    },
+    "blueprint_2": {
+      "inputs": {
+        "nixpkgs": [
+          "skills",
+          "agent-skills-nix",
+          "nixpkgs"
+        ],
+        "systems": "systems_3"
+      },
+      "locked": {
+        "lastModified": 1776249299,
+        "narHash": "sha256-Dt9t1TGRmJFc0xVYhttNBD6QsAgHOHCArqGa0AyjrJY=",
+        "owner": "numtide",
+        "repo": "blueprint",
+        "rev": "56131e8628f173d24a27f6d27c0215eff57e40dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "blueprint",
+        "type": "github"
+      }
+    },
     "brew-src": {
       "flake": false,
       "locked": {
@@ -109,12 +217,34 @@
         "type": "github"
       }
     },
+    "home-manager_2": {
+      "inputs": {
+        "nixpkgs": [
+          "skills",
+          "agent-skills-nix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785531816,
+        "narHash": "sha256-vkMnV0JIyw+g/NmcfoajlGaAO+9a0ezia+FZohQJrik=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "bf9ce9fec78f95f374e8dd3b503863a3ec128ebe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "llm-agents": {
       "inputs": {
         "bun2nix": "bun2nix",
         "flake-parts": "flake-parts",
         "nixpkgs": "nixpkgs",
-        "systems": "systems",
+        "systems": "systems_2",
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
@@ -148,6 +278,39 @@
       "original": {
         "owner": "yata-one",
         "repo": "mcpx",
+        "type": "github"
+      }
+    },
+    "mizchi-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784050221,
+        "narHash": "sha256-ayMrZJ+3OD+f4azULSfgFh84UIQSoi+fhSOYvwWq45A=",
+        "owner": "mizchi",
+        "repo": "skills",
+        "rev": "7a0d72866a0bb3e9ac3e2768c328b09ba2bc40c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mizchi",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
+    "moonbit": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786757656,
+        "narHash": "sha256-EmpA7MmpvhH5VQa1IvhfgHxpM59Q40v9fVWGahft5pg=",
+        "owner": "moonbitlang",
+        "repo": "skills",
+        "rev": "07e53e9cfef38b6843839bc506395b226e026e64",
+        "type": "github"
+      },
+      "original": {
+        "owner": "moonbitlang",
+        "ref": "automation/sync-upstream-skills",
+        "repo": "skills",
         "type": "github"
       }
     },
@@ -288,15 +451,49 @@
         "type": "github"
       }
     },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1786593342,
+        "narHash": "sha256-smTKQXMLLStzc8zJevMCckbk3My7SvbbLmPYZUJJKW4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6b5e5b7a6631f065bf6908986990b37d845f847f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "quint": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784554291,
+        "narHash": "sha256-Wj4ytTHMaEdu2lEP8Fbh9moXQtsKmLikG5hgf2PNEsE=",
+        "owner": "quint-co",
+        "repo": "quint",
+        "rev": "4e6a580ef40d96914fcebe4e1b4ae95f34c2a75e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "quint-co",
+        "repo": "quint",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "agent-skills-nix": "agent-skills-nix",
         "home-manager": "home-manager",
         "llm-agents": "llm-agents",
         "mcpx": "mcpx",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_4",
-        "shikher-yazi-plugins": "shikher-yazi-plugins"
+        "shikher-yazi-plugins": "shikher-yazi-plugins",
+        "skills": "skills"
       }
     },
     "shikher-yazi-plugins": {
@@ -315,7 +512,60 @@
         "type": "github"
       }
     },
+    "skills": {
+      "inputs": {
+        "agent-browser": "agent-browser",
+        "agent-skills-nix": "agent-skills-nix_2",
+        "mizchi-skills": "mizchi-skills",
+        "moonbit": "moonbit",
+        "nixpkgs": "nixpkgs_5",
+        "quint": "quint"
+      },
+      "locked": {
+        "lastModified": 1786821647,
+        "narHash": "sha256-7lHRQlOmT0fuBkcnQp2/GuvuKzia2HOXSCHKB7m9i9I=",
+        "owner": "toshiki-higa",
+        "repo": "skills",
+        "rev": "a81295d48e06d4980ffe5ee367a3addbfcf7b7b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "toshiki-higa",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_3": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

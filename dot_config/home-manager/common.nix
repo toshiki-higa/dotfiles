@@ -3,7 +3,6 @@
 let
   system = pkgs.stdenv.hostPlatform.system;
   inherit (inputs.llm-agents.packages.${system})
-    apm
     pi
     opencode
     agent-browser
@@ -12,6 +11,14 @@ let
     ;
   mcpx = inputs.mcpx.packages.${system}.default;
   vscodeGitGutter = "${inputs.shikher-yazi-plugins}/vscode-git-gutter.yazi";
+  skillSources = builtins.mapAttrs (_: src:
+    src // {
+      path = if src.input or null != null
+        then inputs.skills.inputs.${src.input}
+        else inputs.skills;
+      input = null;
+    }
+  ) inputs.skills.sources;
 in
 
 {
@@ -79,7 +86,6 @@ in
     turso-cli
 
     # AI
-    apm
     pi
     opencode
     agent-browser
@@ -117,5 +123,19 @@ in
   programs.nh = {
     enable = true;
     darwinFlake = "${config.home.homeDirectory}/.config/home-manager";
+  };
+
+  # Agent Skills
+  programs.agent-skills = {
+    enable = true;
+    sources = skillSources;
+    skills.enable = [
+      "ai/fetch-url"
+      "ai/orchestrate"
+      "ai/web-search"
+      "tooling/agent-browser"
+      "tooling/nix-setup"
+    ];
+    targets.agents.enable = true;
   };
 }
