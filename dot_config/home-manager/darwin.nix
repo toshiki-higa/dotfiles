@@ -176,4 +176,9 @@
   };
 
   users.users.${username}.home = "/Users/${username}";
+
+  # macOS-only packages via nixpkgs
+  environment.systemPackages = with pkgs; [
+    mole-cleaner
+  ];
 }

@@ -84,6 +84,7 @@ in
     cloudflared
     mosh
     turso-cli
+    sqld
 
     # AI
     pi
