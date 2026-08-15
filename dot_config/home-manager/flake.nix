@@ -34,7 +34,7 @@
     };
   };
 
-  outputs = { nixpkgs, nix-darwin, home-manager, nix-homebrew, llm-agents, mcpx, shikher-yazi-plugins, ... }:
+  outputs = inputs@{ nixpkgs, nix-darwin, home-manager, nix-homebrew, ... }:
     let
       system = "aarch64-darwin";
       username = "toshiki-higa";
@@ -47,16 +47,7 @@
       # module from both the standalone and nix-darwin evaluation paths.
       homeUser = {
         imports = [ ./common.nix ];
-        _module.args = {
-          apm = llm-agents.packages.${system}.apm;
-          pi = llm-agents.packages.${system}.pi;
-          opencode = llm-agents.packages.${system}.opencode;
-          agent-browser = llm-agents.packages.${system}.agent-browser;
-          herdr = llm-agents.packages.${system}.herdr;
-          hunk = llm-agents.packages.${system}.hunk;
-          mcpx = mcpx.packages.${system}.default;
-          vscodeGitGutter = "${shikher-yazi-plugins}/vscode-git-gutter.yazi";
-        };
+        _module.args = { inherit inputs; };
         home = {
           inherit username;
           homeDirectory = "/Users/${username}";

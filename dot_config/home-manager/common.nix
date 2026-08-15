@@ -1,4 +1,18 @@
-{ config, pkgs, apm, pi, opencode, agent-browser, herdr, hunk, mcpx, vscodeGitGutter, ... }:
+{ config, pkgs, inputs, ... }:
+
+let
+  system = pkgs.stdenv.hostPlatform.system;
+  inherit (inputs.llm-agents.packages.${system})
+    apm
+    pi
+    opencode
+    agent-browser
+    herdr
+    hunk
+    ;
+  mcpx = inputs.mcpx.packages.${system}.default;
+  vscodeGitGutter = "${inputs.shikher-yazi-plugins}/vscode-git-gutter.yazi";
+in
 
 {
   # Do not change this value casually. It controls Home Manager compatibility.
