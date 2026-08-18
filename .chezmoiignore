@@ -19,6 +19,7 @@ docs
 # ─────────────────────────────────────────────────────────────────────────────
 .chezmoiscripts/darwin/**
 Library/**
+dot_volta/**
 {{- end }}
 
 {{- if ne .osid "linux-raspberrypi" }}
