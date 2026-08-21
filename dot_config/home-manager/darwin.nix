@@ -35,6 +35,7 @@
         InitialKeyRepeat = 14;
         KeyRepeat = 1;
         ApplePressAndHoldEnabled = false;
+        "com.apple.trackpad.scaling" = 3.0; # cursor speed by trackpad = max
       };
 
       finder = {
