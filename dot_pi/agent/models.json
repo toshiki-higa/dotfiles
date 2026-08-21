@@ -19,6 +19,40 @@
         }
       }
     },
+    "opencode": {
+      "models": [
+        {
+          "id": "x-preview-f-free",
+          "name": "Ox Alpha Free (ZDR)",
+          "baseUrl": "https://opencode.ai/zen/v1",
+          "api": "openai-completions",
+          "reasoning": true,
+          "input": ["text", "image"],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "compat": {
+            "supportsStore": false,
+            "supportsDeveloperRole": false,
+            "maxTokensField": "max_tokens"
+          },
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": null,
+            "high": "high",
+            "xhigh": null,
+            "max": "max"
+          }
+        }
+      ]
+    },
     "zai": {
       "modelOverrides": {
         "glm-5.3": {
