@@ -6,9 +6,9 @@
     "lint:secrets": "secretlint \"**/*\""
   },
   "devDependencies": {
-    "@secretlint/secretlint-rule-preset-recommend": "^13.0.4",
-    "secretlint": "^13.0.4",
-    "vite-plus": "^0.2.5"
+    "@secretlint/secretlint-rule-preset-recommend": "13.0.4",
+    "secretlint": "13.0.4",
+    "vite-plus": "0.2.9"
   },
-  "packageManager": "pnpm@11.17.0"
+  "packageManager": "pnpm@11.22.0"
 }
