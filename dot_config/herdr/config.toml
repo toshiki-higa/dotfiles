@@ -22,13 +22,13 @@ next_agent = "ctrl+alt+down"
 key = "prefix+ctrl+alt+d"
 type = "shell"
 description = "Review Viewer (all changed files)"
-command = """pane_id=$(herdr pane split --current --direction right --cwd "$PWD" --focus | jq -r '.result.pane.pane_id') && herdr pane rename "$pane_id" hunk && herdr pane run "$pane_id" 'hunk diff HEAD'"""
+command = """pane_id=$(herdr pane split --pane "$HERDR_ACTIVE_PANE_ID" --direction right --cwd "$PWD" --focus | jq -r '.result.pane.pane_id') && herdr pane rename "$pane_id" hunk && herdr pane run "$pane_id" 'hunk diff HEAD --watch'"""
 
 [[keys.command]]
 key = "prefix+ctrl+d"
 type = "shell"
 description = "Review Viewer (Only staged files)"
-command = """pane_id=$(herdr pane split --current --direction right --cwd "$PWD" --focus | jq -r '.result.pane.pane_id') && herdr pane rename "$pane_id" hunk && herdr pane run "$pane_id" 'hunk diff --staged'"""
+command = """pane_id=$(herdr pane split --pane "$HERDR_ACTIVE_PANE_ID" --direction right --cwd "$PWD" --focus | jq -r '.result.pane.pane_id') && herdr pane rename "$pane_id" hunk && herdr pane run "$pane_id" 'hunk diff --staged --watch'"""
 
 [[keys.command]]
 key = "prefix+ctrl+f"
