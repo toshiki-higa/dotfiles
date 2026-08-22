@@ -4,6 +4,9 @@
 README.md
 LICENSE
 .gitignore
+.envrc
+flake.nix
+flake.lock
 package.json
 pnpm-lock.yaml
 vite.config.ts
