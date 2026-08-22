@@ -28,6 +28,10 @@ in
   home.sessionVariables = {
     EDITOR = "hx";
     HOMEBREW_FORBIDDEN_FORMULAE = "node python python3 pip npm pnpm yarn";
+    XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
+    XDG_CACHE_HOME = "${config.home.homeDirectory}/.cache";
+    XDG_DATA_HOME = "${config.home.homeDirectory}/.local/share";
+    XDG_STATE_HOME = "${config.home.homeDirectory}/.local/state";
   };
   home.sessionPath = [
     "/run/current-system/sw/bin"
