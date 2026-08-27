@@ -78,6 +78,12 @@
     /usr/bin/defaults write \
       /Library/Preferences/FeatureFlags/Domain/UIKit.plist \
       redesigned_text_cursor -dict-add Enabled -bool NO
+
+    # Reload symbolic hotkeys
+    /usr/bin/sudo -u ${username} /usr/bin/defaults read \
+      com.apple.symbolichotkeys.plist >/dev/null
+    /usr/bin/sudo -u ${username} \
+      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
   '';
 
   # Clean old profiles and unreachable store paths every Sunday at 03:15.
