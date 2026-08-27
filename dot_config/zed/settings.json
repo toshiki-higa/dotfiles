@@ -35,6 +35,7 @@
     "git-firefly": false,
     "docker-compose": false,
     "mermaid": true,
+    "tsgo": true,
     "moonbit": true,
     "rainbow-csv": true,
   },
