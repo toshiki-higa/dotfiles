@@ -61,6 +61,11 @@
         };
 
         "com.apple.symbolichotkeys".AppleSymbolicHotKeys = {
+          "28".enabled = false; # Disable Command-Shift-3 (save screenshot to file)
+          "29".enabled = false; # Disable Command-Control-Shift-3 (copy screenshot to clipboard)
+          "30".enabled = false; # Disable Command-Shift-4 (save selected-area screenshot to file)
+          "31".enabled = false; # Disable Command-Control-Shift-4 (copy selected-area screenshot to clipboard)
+          "64".enabled = false; # Disable Command-Space (Spotlight search)
           "65".enabled = false; # Disable Option-Command-Space (Finder search window)
         };
       };
