@@ -86,27 +86,12 @@
       /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
   '';
 
-  # Clean old profiles and unreachable store paths every Sunday at 03:15.
-  # Run as a root daemon so nix-darwin system generations are included.
-  launchd.daemons.nh-clean.serviceConfig = {
-    ProgramArguments = [
-      "${pkgs.nh}/bin/nh"
-      "clean"
-      "all"
-      "--keep-since"
-      "30d"
-      "--keep-one"
-    ];
-    StartCalendarInterval = [
-      {
-        Weekday = 7;
-        Hour = 3;
-        Minute = 15;
-      }
-    ];
-    StandardOutPath = "/var/log/nh-clean.log";
-    StandardErrorPath = "/var/log/nh-clean.error.log";
-  };
+  users.users.${username}.home = "/Users/${username}";
+
+  # macOS-only packages via nixpkgs
+  environment.systemPackages = with pkgs; [
+    mole-cleaner
+  ];
 
   # Homebrew is intentionally limited to GUI applications and Mac App Store
   # apps. CLI packages belong to Home Manager, and runtimes/tools to mise.
@@ -187,7 +172,27 @@
     };
   };
 
-  users.users.${username}.home = "/Users/${username}";
+  # Clean old profiles and unreachable store paths every Sunday at 03:15.
+  # Run as a root daemon so nix-darwin system generations are included.
+  launchd.daemons.nh-clean.serviceConfig = {
+    ProgramArguments = [
+      "${pkgs.nh}/bin/nh"
+      "clean"
+      "all"
+      "--keep-since"
+      "30d"
+      "--keep-one"
+    ];
+    StartCalendarInterval = [
+      {
+        Weekday = 7;
+        Hour = 3;
+        Minute = 15;
+      }
+    ];
+    StandardOutPath = "/var/log/nh-clean.log";
+    StandardErrorPath = "/var/log/nh-clean.error.log";
+  };
 
   programs.nix-secure-enclave-key = {
     enable = true;
@@ -207,8 +212,4 @@
     signByDefault = true;
   };
 
-  # macOS-only packages via nixpkgs
-  environment.systemPackages = with pkgs; [
-    mole-cleaner
-  ];
 }
