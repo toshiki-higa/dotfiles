@@ -27,6 +27,7 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     llm-agents.url = "github:numtide/llm-agents.nix";
+    nix-secure-enclave-key.url = "github:ryoppippi/nix-secure-enclave-key";
     mcpx.url = "github:yata-one/mcpx";
     shikher-yazi-plugins = {
       url = "github:ShikherVerma/yazi-plugins";
@@ -77,6 +78,7 @@
 
         modules = [
           nix-homebrew.darwinModules.nix-homebrew
+          inputs.nix-secure-enclave-key.darwinModules.default
           ./darwin.nix
           home-manager.darwinModules.home-manager
           {

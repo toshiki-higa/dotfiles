@@ -189,6 +189,24 @@
 
   users.users.${username}.home = "/Users/${username}";
 
+  programs.nix-secure-enclave-key = {
+    enable = true;
+
+    identities.git-signing = {
+      keyFile = "~/.ssh/id_git_sign";
+      label = "git-signing-nix-secure-enclave-key";
+      protection = "none";
+      autoEnsure = true;
+      github = {
+        autoAdd = true;
+        type = "signing";
+      };
+    };
+
+    signingIdentity = "git-signing";
+    signByDefault = true;
+  };
+
   # macOS-only packages via nixpkgs
   environment.systemPackages = with pkgs; [
     mole-cleaner
