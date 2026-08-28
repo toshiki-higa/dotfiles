@@ -46,6 +46,12 @@ width = "90%"
 height = "90%"
 command = "lazygit"
 
+[[keys.command]]
+key = "prefix+ctrl+e"
+type = "shell"
+description = "Open Editor (Zed)"
+command = "/opt/homebrew/bin/zed ."
+
 [ui]
 show_agent_labels_on_pane_borders = true
 agent_panel_sort = "priority"
