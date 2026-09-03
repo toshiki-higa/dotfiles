@@ -4,6 +4,13 @@
 [user]
   name = {{ .name }}
   email = {{ .email }}
+  signingkey = ~/.ssh/id_git_sign
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = /run/current-system/sw/bin/nix-secure-enclave-key-git-sign
+[commit]
+  gpgsign = true
 [ghq]
   root=~/ghq
 [init]
@@ -14,6 +21,7 @@
   sort = -committerdate
 [tag]
   sort = version:refname
+  gpgsign = true
 [diff]
   algorithm = histogram
   colorMoved = plain
