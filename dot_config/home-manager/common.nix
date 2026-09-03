@@ -99,8 +99,7 @@ in
     mcpx
 
     # Secret
-    rbw
-    pinentry_mac
+    bitwarden-cli
 
     # Other utilities
     rclone
