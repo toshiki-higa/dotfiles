@@ -7,7 +7,6 @@ let
     opencode
     agent-browser
     herdr
-    hunk
     ;
   mcpx = inputs.mcpx.packages.${system}.default;
   vscodeGitGutter = "${inputs.shikher-yazi-plugins}/vscode-git-gutter.yazi";
@@ -95,7 +94,6 @@ in
     opencode
     agent-browser
     herdr
-    hunk
     mcpx
 
     # Secret
