@@ -47,6 +47,7 @@
 
       dock = {
         autohide = true;
+        expose-group-apps = true;
         show-recents = false;
         mru-spaces = false;
         tilesize = 48;
