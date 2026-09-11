@@ -7,6 +7,7 @@ source "$HOME/.zshrc" &>/dev/null || true
 
 pi_packages=(
   "npm:@superwhisper/pi"
+  "npm:@sting8k/pi-vcc"
 )
 
 print '\n--- Setup AI Tools ---------'
