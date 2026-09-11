@@ -55,11 +55,34 @@
 
       trackpad.Clicking = true;
 
+      menuExtraClock = {
+        Show24Hour = true;
+        ShowAMPM = false;
+        ShowSeconds = false;
+        ShowDayOfWeek = false;
+        ShowDate = 1; # always show the date
+      };
+
       CustomUserPreferences = {
         "com.apple.desktopservices" = {
           DSDontWriteNetworkStores = true;
           DSDontWriteUSBStores = true;
         };
+
+        # Menu bar (18: show, 24: hide)
+        "~${username}/Library/Preferences/ByHost/com.apple.controlcenter" = {
+          WiFi = 24;
+          Bluetooth = 24;
+          Battery = 18;
+          AirDrop = 24;
+          FocusModes = 24;
+          Display = 24;
+          Sound = 24;
+          NowPlaying = 24;
+        };
+        "com.apple.TextInputMenu".visible = true;
+        "com.apple.Siri".StatusMenuVisible = false;
+        "com.apple.Spotlight".MenuItemHidden = 1;
 
         "com.apple.symbolichotkeys".AppleSymbolicHotKeys = {
           "28".enabled = false; # Disable Command-Shift-3 (save screenshot to file)
