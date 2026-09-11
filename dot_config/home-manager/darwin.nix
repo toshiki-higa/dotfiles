@@ -121,6 +121,10 @@
         name = "felixkratz/formulae";
         trusted = true;
       }
+      {
+        name = "abue-ammar/tinycast";
+        trusted = true;
+      }
     ];
     brews = [
       "mas"
@@ -132,7 +136,7 @@
       # General utilities
       "arc"
       "readdle-spark"
-      "raycast"
+      "tinycast"
       "shottr"
       "thaw"
       "notchnook"
