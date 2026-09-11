@@ -11,9 +11,9 @@
       "url": "https://mcp.deepwiki.com/mcp",
       "description": "Use to explore public repositories"
     },
-    "exa": {
+    "parallel-search": {
       "transport": "http",
-      "url": "https://mcp.exa.ai/mcp",
+      "url": "https://search.parallel.ai/mcp",
       "description": "Use to search in web, fetch context from url"
     },
     "grep_app": {
