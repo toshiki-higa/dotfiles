@@ -6,18 +6,47 @@ set -euo pipefail
 source "$HOME/.zshrc" &>/dev/null || true
 
 pi_packages=(
-  "npm:@sting8k/pi-vcc"
+  "npm:@calesennett/pi-codex-fast"
+  "git:github.com/earendil-works/pi-review"
 )
 
 print '\n--- Setup AI Tools ---------'
-installed_pi_packages="$(pi list --no-approve)"
+contains_pi_package() {
+  local needle="$1"
+  shift
+
+  local package
+  for package in "$@"; do
+    [[ "$package" == "$needle" ]] && return 0
+  done
+  return 1
+}
+
+# Treat pi_packages as the source of truth. Package entries in `pi list` are
+# indented by exactly two spaces; their installation paths use four spaces.
+installed_pi_packages=()
+while IFS= read -r line; do
+  if [[ "$line" == "  "* && "$line" != "    "* ]]; then
+    installed_pi_packages+=("${line#  }")
+  fi
+done <<< "$(pi list --no-approve)"
+
+# Install before removing so a failed install does not remove working packages.
 for pi_package in "${pi_packages[@]}"; do
-  if [[ "$installed_pi_packages" != *"$pi_package"* ]]; then
+  if contains_pi_package "$pi_package" "${installed_pi_packages[@]}"; then
+    print -r -- "[SKIP] Pi package already installed: $pi_package"
+  else
     print -r -- "[RUN] Install Pi package: $pi_package"
     pi install "$pi_package" --no-approve
     print -r -- "[DONE] Install Pi package: $pi_package"
-  else
-    print -r -- "[SKIP] Pi package already installed: $pi_package"
+  fi
+done
+
+for installed_pi_package in "${installed_pi_packages[@]}"; do
+  if ! contains_pi_package "$installed_pi_package" "${pi_packages[@]}"; then
+    print -r -- "[RUN] Remove unmanaged Pi package: $installed_pi_package"
+    pi remove "$installed_pi_package" --no-approve
+    print -r -- "[DONE] Remove unmanaged Pi package: $installed_pi_package"
   fi
 done
 
