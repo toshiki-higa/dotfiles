@@ -177,8 +177,11 @@
       "tailscale-app"
       "macfuse"
 
-      # Private
+      # iOS
+      # Related: https://github.com/mrdrvt99/Altstore-Repository
       "altserver"
+
+      # Android
       "soduto"
 
       # Work
