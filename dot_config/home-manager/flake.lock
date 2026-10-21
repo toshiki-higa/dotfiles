@@ -206,6 +206,22 @@
         "type": "github"
       }
     },
+    "foldkit": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792195698,
+        "narHash": "sha256-Diu6jounOrKZFAvmi5cdy0Nx27CSbjqcvv1t0Ae0Hng=",
+        "owner": "foldkit",
+        "repo": "foldkit",
+        "rev": "606ca39eaf1cb92659d83aaaac3512b47cba25a2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "foldkit",
+        "repo": "foldkit",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -213,11 +229,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792098797,
-        "narHash": "sha256-u4DIIZgznEGzByxXrxWCXK19VcMtTBmi/M9gZ7Jk9bM=",
+        "lastModified": 1792495086,
+        "narHash": "sha256-TyoYH983Nsc++1scw0SoOEKshPSJWJDxK7tTmuZ974M=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "640725978b99076e18e069f6e7d2959124584f8f",
+        "rev": "ec80131710bffcdf3b8498cf41f3a0579833b023",
         "type": "github"
       },
       "original": {
@@ -264,6 +280,22 @@
         "type": "github"
       }
     },
+    "kitlangton-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790962262,
+        "narHash": "sha256-OAG3JMZjB5NVnuEn9McboxhqQ7sWbuT+9m0YjFIm/WU=",
+        "owner": "kitlangton",
+        "repo": "skills",
+        "rev": "71195e36024ebd2e66c5beac946e81eafd5abc43",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kitlangton",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
     "llm-agents": {
       "inputs": {
         "bun2nix": "bun2nix",
@@ -273,11 +305,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1792123574,
-        "narHash": "sha256-Nfg3uuj6SrYd95vB2acYHLvQfjs9L2WZwMgkaKsQyOs=",
+        "lastModified": 1792537819,
+        "narHash": "sha256-ARZDzZjNO5qnUkPyREMbAMA/+9HzlQ/vzpbLzAeBdRU=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "64f24d6169b8e5996e0c3a3ae696bdf11806b34e",
+        "rev": "9d41351cd41c70c69f9a4ba635d95d5921ceed33",
         "type": "github"
       },
       "original": {
@@ -365,11 +397,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786845137,
-        "narHash": "sha256-oQFip+v0luP8NIxJzmiW4Wu8bILsbFWom5l0zonl8hQ=",
+        "lastModified": 1792366139,
+        "narHash": "sha256-jto4pdsl0bgErQ5vaMc3gOyj//PILLRJuqX3I7fUk6s=",
         "owner": "nix-darwin",
         "repo": "nix-darwin",
-        "rev": "4cff07de74b50e64bdd68cd4e722ab5b6b35ee48",
+        "rev": "f0ec2b3fae4df92ea7788359aef9e07bb88d720f",
         "type": "github"
       },
       "original": {
@@ -417,11 +449,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1791966044,
-        "narHash": "sha256-t1hT8UW97rFCWCJO7/pClvu0AhLN5V3uir2M0ic4w/Q=",
+        "lastModified": 1792116957,
+        "narHash": "sha256-EjZqHKObBfIOeHZnMRVV87HB3pPq/WBkmRJWyFxmZu8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "319e4cebef10cbb636c6ea392137b52ad105336a",
+        "rev": "f20cd90e28fe0403873f473b29e42662cd86e8c4",
         "type": "github"
       },
       "original": {
@@ -511,11 +543,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1791966044,
-        "narHash": "sha256-t1hT8UW97rFCWCJO7/pClvu0AhLN5V3uir2M0ic4w/Q=",
+        "lastModified": 1792488032,
+        "narHash": "sha256-RkAXQ3+a5rHMiP97Er7AawR1kvEXX9tK1mhiWedOPTc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "319e4cebef10cbb636c6ea392137b52ad105336a",
+        "rev": "e513db7b0a65def6f6e17bb55195dfe510871944",
         "type": "github"
       },
       "original": {
@@ -592,18 +624,20 @@
         "agent-browser": "agent-browser",
         "agent-skills-nix": "agent-skills-nix_2",
         "daisyui": "daisyui",
+        "foldkit": "foldkit",
         "impeccable": "impeccable",
+        "kitlangton-skills": "kitlangton-skills",
         "mizchi-skills": "mizchi-skills",
         "moonbit": "moonbit",
         "nixpkgs": "nixpkgs_6",
         "quint": "quint"
       },
       "locked": {
-        "lastModified": 1790428602,
-        "narHash": "sha256-I3K5XDlsMlIrJm5bIg10roGySxZHURC4zmk/p5jDeOQ=",
+        "lastModified": 1792314082,
+        "narHash": "sha256-K9kG9DFkVbXods3T6EmZC01SeAH/uWNqb0hetBSpo/A=",
         "owner": "toshiki-higa",
         "repo": "skills",
-        "rev": "28346c8a7a095a583aabbfab8055f0a0255a6bdd",
+        "rev": "4c83b36e48357354bc91882514ee1e97cff4a3e9",
         "type": "github"
       },
       "original": {
