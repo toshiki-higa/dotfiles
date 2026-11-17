@@ -47,6 +47,12 @@
         "KAMUI-CODE-PASS": "${KAMUI_CODE_PASS_KEY}"
       }
     },
+    "yab": {
+      "transport": "stdio",
+      "command": "pnx",
+      "args": ["yab-mcp"],
+      "description": "Use this to interact with YAB browser"
+    },
     "webmcp-relay": {
       "transport": "stdio",
       "command": "pnx",
