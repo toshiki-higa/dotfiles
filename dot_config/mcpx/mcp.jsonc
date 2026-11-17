@@ -24,6 +24,9 @@
     "alphaxiv": {
       "transport": "http",
       "url": "https://api.alphaxiv.org/mcp/v1",
+      "protocol": {
+        "mode": "stateful"
+      },
       "description": "Use to search and explore academic research papers",
       "auth": {
         "type": "oauth"
