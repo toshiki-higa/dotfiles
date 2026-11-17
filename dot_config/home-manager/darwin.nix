@@ -133,6 +133,10 @@
     # Homebrew 6 requires non-official taps/formulae to be explicitly trusted.
     taps = [
       {
+        name = "yetanotherbrowser/tap";
+        trusted = true;
+      }
+      {
         name = "rjyo/moshi";
         trusted = true;
       }
@@ -157,7 +161,7 @@
 
     casks = [
       # General utilities
-      "arc"
+      "yab"
       "readdle-spark"
       "tinycast"
       "shottr"
