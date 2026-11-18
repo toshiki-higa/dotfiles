@@ -4,6 +4,7 @@ let
   system = pkgs.stdenv.hostPlatform.system;
   inherit (inputs.llm-agents.packages.${system})
     pi
+    antigravity-cli
     opencode
     agent-browser
     herdr
@@ -92,6 +93,7 @@ in
 
     # AI
     pi
+    antigravity-cli
     opencode
     agent-browser
     herdr
