@@ -1,5 +1,37 @@
 {
   "providers": {
+    "zai": {
+      "models": [
+        {
+          "id": "glm-5.4",
+          "name": "GLM-5.4",
+          "reasoning": true,
+          "input": ["text", "image"],
+          "cost": {
+            "input": 1.4,
+            "output": 4.4,
+            "cacheRead": 0.26,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": null,
+            "high": "high",
+            "xhigh": null,
+            "max": "max"
+          },
+          "compat": {
+            "supportsReasoningEffort": true,
+            "maxTokensField": "max_tokens",
+            "thinkingFormat": "zai"
+          }
+        }
+      ]
+    },
     "kimi-coding": {
       "modelOverrides": {
         "k3-256k": {
